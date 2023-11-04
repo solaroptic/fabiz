@@ -1,0 +1,97 @@
+.edit-div-container {
+  background: linear-gradient(140deg, var(--lightAccent), var(--tertiary));
+  height: 100vh;
+}
+
+.pic-form-container,
+.pic-form-containerA {
+  padding: clamp(0.2rem, 2vw, 1.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-size: clamp(var(--smallestFont), 4.5vw, var(--smallFont));
+  border-bottom: 2px solid var(--primary);
+}
+.pic-form-containerA {
+  cursor: pointer;
+}
+.pic-form-container {
+  gap: clamp(1rem, 3vw, 4rem);
+}
+.pic-form-container input {
+  font-size: clamp(var(--smallestFont), 4.5vw, var(--smallFont));
+  color: var(--white);
+}
+
+.pic-form-container input::file-selector-button {
+  color: var(--white);
+  width: 10rem;
+  font-size: clamp(var(--smallFont), 4vw, var(--midFont));
+  font-family: "Grenze";
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  margin-right: 2rem;
+  transition: all 0.3s;
+}
+.pic-form-container input::file-selector-button:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+  filter: drop-shadow(1px 1px 1px var(--primary));
+}
+.edit-div-container button:not(:first-child) {
+  color: var(--primary);
+  background-color: var(--lightAccent);
+  font-size: var(--smallFont);
+  border: 1px solid var(--primary);
+  border-radius: 1rem;
+  padding: 1rem 0.6rem;
+  transition: all 0.5s;
+}
+.edit-div-container button:hover,
+.pic-form-container button:hover {
+  transform: scale(1.05);
+  background-color: var(--white);
+  filter: drop-shadow(2px 2px 2px var(--primary));
+}
+.edit-form-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 50%;
+  margin: 0rem auto;
+  padding-top: 2.5rem;
+}
+.edit-form-info h1 {
+  font-size: clamp(var(--midFont), 4vw, var(--largeFont));
+  margin: 0 auto;
+}
+.edit-form-info label {
+  font-size: clamp(var(--smallestFont), 4vw, var(--smallFont));
+}
+.edit-form-info input,
+.edit-form-info textarea {
+  font-size: clamp(var(--smallestFont), 4vw, var(--smallFont));
+  background-color: var(--lightAccent);
+  border: 1px solid var(--primary);
+  border-radius: 9px;
+  padding: 1rem 1rem;
+}
+.edit-form-info input:focus,
+.edit-form-info textarea:focus {
+  background-color: var(--white);
+}
+@media (max-width: 700px) {
+  .edit-div-container button:nth-child(3) {
+    font-size: var(--smallestFont);
+    padding: 0.3rem 0.2rem;
+    width: 15rem;
+  }
+  .pic-form-container input::file-selector-button {
+    width: 6rem;
+  }
+  .pic-form-container label {
+    width: 13rem;
+  }
+}

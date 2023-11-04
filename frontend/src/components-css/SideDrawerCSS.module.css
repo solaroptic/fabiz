@@ -1,0 +1,92 @@
+.sideDrawer-container {
+  display: flex;
+  background-color: var(--primary);
+  width: 100%;
+  height: clamp(5rem, 10vw, 9rem);
+  padding: 0.7rem 0rem 0.5rem 1rem;
+  padding-bottom: clamp(-1rem, 0.2vw, 0.5rem);
+  padding-right: clamp(0rem, 0.2vw, 1rem);
+  border: 3px outset var(--secondary);
+  box-shadow: inset 0 0 5px 4px var(--secondary);
+}
+.sideDrawer-container p {
+  font-family: "Grenze";
+  font-size: var(--midFont);
+  font-weight: 500;
+  color: var(--white);
+}
+.sideDrawer-container h1 {
+  display: inline-block;
+  font-size: clamp(var(--midFont), 5vw, var(--largeFont));
+  color: var(--white);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.drawer-icon {
+  fill: var(--white);
+  font-size: clamp(var(--smallFont), 5vw, var(--midFont));
+}
+.drawer-icon-highlight {
+  animation: flash 1s infinite;
+}
+.menuListing-container {
+  position: absolute;
+  top: 4rem;
+  left: -2rem;
+  width: 16rem;
+  background-color: var(--white);
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}
+.menuListing-listing {
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: var(--primary);
+  padding-inline-start: 1rem;
+}
+.menuListing-listing:not(:last-child) {
+  border-bottom: 1px solid var(--secondary);
+  margin-bottom: 0.2rem;
+}
+.sideDrawer-dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 4rem 1rem 4rem;
+  padding-right: clamp(1rem, 5vw, 4rem);
+  padding-left: clamp(1rem, 3vw, 6rem);
+  align-content: baseline;
+  margin-top: 0.7rem;
+}
+.sideDrawer-dashboard main {
+  position: relative;
+}
+.sideDrawer-dropDown {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+@keyframes flash {
+  0% {
+    filter: none;
+  }
+  50% {
+    filter: drop-shadow(0px 0px 15px var(--white));
+  }
+}
+
+@media (max-width: 576px) {
+  .sideDrawer-container {
+    box-shadow: inset 0 0 6px 1px var(--secondary);
+  }
+  .sideDrawer-dropDown {
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+
+  .sideDrawer-bellContainer {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+}

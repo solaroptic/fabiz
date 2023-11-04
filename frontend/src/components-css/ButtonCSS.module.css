@@ -1,0 +1,12 @@
+.standard {
+  align-self: center;
+  border: 2px solid var(--primary);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 2rem 0;
+  transition: all 0.5s;
+}
+.standard:hover {
+  background: var(--white);
+  scale: 1.03;
+}

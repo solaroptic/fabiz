@@ -1,0 +1,40 @@
+.stories-container {
+  background: linear-gradient(120deg, var(--lightAccent), var(--secondary));
+  height: 100vh;
+  overflow-y: auto;
+}
+.section-title {
+  text-align: center;
+  font-size: clamp(2.3rem, 5vw, var(--midFont));
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+.section-text {
+  background-color: var(--lightAccent);
+  margin: 6rem auto;
+  width: 50%;
+  border-radius: 1rem;
+  padding: 2rem 8rem;
+  font-size: clamp(var(--smallestFont), 4vw, var(--smallFont));
+}
+.stories-p-answer {
+  border-bottom: 1px solid var(--primary);
+  font-size: clamp(1.6rem, 2vw, var(--smallestFont));
+  margin-bottom: 0.5rem;
+}
+.stories-div-q-a:last-child p:last-child {
+  border-bottom: none;
+}
+.stories-p-q {
+  font-style: italic;
+  padding-bottom: 1rem;
+}
+.indented {
+  text-indent: 3rem;
+}
+@media (max-width: 576px) {
+  .section-text {
+    width: 90%;
+    margin: 5rem auto;
+    padding: 1rem 2.4rem;
+  }
+}

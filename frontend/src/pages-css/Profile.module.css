@@ -1,0 +1,97 @@
+.profile-container {
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/profileBackground.avif);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header-pic {
+  display: flex;
+  justify-content: center;
+  padding: 8rem 0 4rem 0;
+}
+.button-settings {
+  position: absolute;
+  right: 5rem;
+  top: 12.2%;
+}
+.section-info {
+  font-size: clamp(var(--smallestFont), 1vw, 2.5rem);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 30%;
+  background-color: rgba(234, 204, 202, 0.5);
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  backdrop-filter: blur(2px);
+}
+.section-info > p:first-child {
+  align-self: center;
+  text-transform: capitalize;
+  margin-bottom: 1.6rem;
+  font-size: clamp(var(--midFont), 5vw, var(--largeFont));
+  font-family: "Grenze";
+}
+.response-div-info {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 2%;
+  font-size: clamp(var(--smallestFont), 4.5vw, 2.5rem);
+  margin-bottom: 1.6rem;
+}
+.section-info > h2 {
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+.span-notify {
+  position: absolute;
+  bottom: 25%;
+  right: 30%;
+  display: inline-block;
+  padding: 0 1.2rem 0.25rem 1.2rem;
+  background: var(--secondary);
+  border-radius: 50%;
+  color: var(--white);
+  animation: flash 1.5s infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 1200px) {
+  .section-info {
+    width: 70%;
+    padding: 1rem 3rem;
+  }
+}
+@media (max-width: 670px) {
+  .profile-container {
+    background-image: url(../assets/profil_mobile.avif);
+    background-size: 100% 100%;
+  }
+  .section-info {
+    width: 75%;
+    padding: 1rem 3rem;
+  }
+}
+@media (max-width: 576px) {
+  .section-info {
+    width: 90%;
+    padding: 1rem 3rem;
+  }
+  .button-settings {
+    top: 7.2%;
+    right: 4%;
+  }
+}

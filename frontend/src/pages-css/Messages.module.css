@@ -1,0 +1,34 @@
+.messages-div-container {
+  background: linear-gradient(120deg, var(--lightAccent), var(--secondary));
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+.messages-div-chatBoxes {
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+  gap: clamp(4%, 10vw, 6%);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+  margin: 5.5rem auto;
+}
+
+@media (max-width: 800px) {
+  .messages-div-chatBoxes {
+    margin: 1.3rem 0 0 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    row-gap: 4%;
+    height: auto;
+    max-height: 95vh;
+    overflow: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--primary);
+  }
+}

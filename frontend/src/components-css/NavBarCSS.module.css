@@ -1,0 +1,28 @@
+.nav-div-container {
+  margin: 0 auto;
+  padding-top: clamp(1rem, 2vw, 2rem);
+  padding-bottom: clamp(0.5rem, 1vw, 1rem);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  background-color: var(--secondary);
+  border-bottom: 8px solid var(--primary);
+  border-bottom-width: clamp(0.3rem, 1vw, 0.8rem);
+}
+.nav-links {
+  font-size: clamp(2.3rem, 5vw, var(--midFont));
+}
+.nav-links:last-child {
+  cursor: pointer;
+}
+.nav-links + p {
+  text-transform: capitalize;
+}
+.nav-adjust {
+  margin-top: 0.5rem;
+}
+.nav-face {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-top: clamp(0.5rem, 2vw, 0rem);
+}

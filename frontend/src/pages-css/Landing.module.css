@@ -1,0 +1,86 @@
+.background-div-layer {
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/poland_2.jpg);
+  background-size: cover;
+  z-index: -1;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.text-div-container {
+  margin: 2rem auto;
+  margin-top: clamp(0.7rem, 1.5vw, 2rem);
+  width: clamp(96%, 75vw, 115rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  animation-name: appear;
+  animation-duration: 3s;
+}
+.text-h1-heading {
+  font-size: clamp(5rem, 7vw, 7rem);
+  font-weight: bold;
+  color: var(--primary);
+}
+.text-section-select {
+  width: clamp(34.5rem, 70vw, 80rem);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 1rem auto;
+  font-size: clamp(2rem, 5vw, var(--midFont));
+}
+.message-section {
+  color: var(--primary);
+  margin: 2rem auto 0 auto;
+  padding: 1rem;
+  border-radius: 16px;
+  background: linear-gradient(
+    344deg,
+    rgba(214, 125, 42, 0.6),
+    rgba(250, 250, 250, 0.8)
+  );
+  width: clamp(34rem, 33vw, 55rem);
+  box-shadow: 5px 4px 3px var(--shadow-1);
+}
+.message-h2-heading {
+  font-size: clamp(2rem, 5vw, var(--midFont));
+}
+.message-p-text {
+  font-size: clamp(1.6rem, 3vw, var(--smallFont));
+  font-weight: bold;
+}
+.img-map {
+  position: absolute;
+  width: clamp(30rem, 29vw, 74rem);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+  animation-name: appear;
+  animation-duration: 3s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 800px) {
+  .background-div-layer {
+    background-image: url(../assets/landing_mobile2.avif);
+    background-size: 100% 100%;
+  }
+  .img-map {
+    bottom: 11%;
+  }
+}
+@media (max-width: 500px) {
+  .img-map {
+    bottom: 15%;
+  }
+}

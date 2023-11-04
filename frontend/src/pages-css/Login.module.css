@@ -1,0 +1,103 @@
+.loginPage {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(120deg, var(--lightAccent), var(--secondary));
+  margin-bottom: 3rem;
+  padding: 3rem;
+}
+.login-container {
+  box-shadow: inset 0 0 10px 3px var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: var(--white);
+  width: 35rem;
+  max-height: max-content;
+  border-radius: 1rem;
+  border: 0.6rem solid var(--primary);
+  overflow-y: auto;
+}
+.login-labels {
+  font-size: var(--smallestFont);
+  align-self: flex-start;
+}
+.login-inputs {
+  margin: 0.5rem 0 1.5rem 0;
+  height: var(--midFont);
+  font-size: var(--smallestFont);
+  padding: 0 1rem 0 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--secondary);
+  align-self: center;
+  position: relative;
+}
+
+.login-button-show {
+  position: absolute;
+  margin-top: 0.75rem;
+  top: -1%;
+  right: 6%;
+  height: 0.5rem;
+  padding: 0.3rem 0rem;
+  font-size: 1.4rem;
+  background-color: var(--white);
+}
+.login-button-show:focus {
+  outline: none;
+}
+.login-cats form {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 20rem;
+  justify-content: center;
+  align-items: center;
+}
+.login-button-submit {
+  margin: 1.5rem 0 1.5rem 0rem;
+  font-size: var(--midFont);
+  background-color: var(--primary);
+  cursor: pointer;
+  border-radius: 1rem;
+  padding: 0rem 1.25rem 0.5rem 1.25rem;
+  color: var(--white);
+}
+.login-button-submit:hover {
+  font-size: var(--midFont);
+  background-color: var(--secondary);
+  transform: scale(1.02);
+  box-shadow: 1px 1px 3px 1px rgba(87, 47, 29, 0.2);
+}
+.login-button-account {
+  margin: 0.5rem 0 1.5rem 0;
+  font-size: var(--smallestFont);
+  background-color: var(--white);
+  color: var(--primary);
+  text-decoration: underline;
+}
+.login-button-account:hover {
+  margin: 0.5rem 0 1.5rem 0;
+  color: var(--secondary);
+  transform: scale(1.02);
+  background-color: var(--white);
+}
+.login-button-account:focus {
+  outline: none;
+}
+.login-div-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-img {
+  width: 22rem;
+  text-align: center;
+  border-radius: 1rem;
+  border: 2px solid var(--primary);
+  filter: brightness(1.1);
+  margin-bottom: 4rem;
+}
