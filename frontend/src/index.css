@@ -28,7 +28,6 @@ html {
 a {
   text-decoration: none;
   font-weight: 500;
-  /* color: inherit; */
 }
 :root {
   --primary: #572f1d;
@@ -38,11 +37,7 @@ a {
   --lightest: #c68e75;
   --lightAccent: #e6cec4;
   --glow: #b9f5d0;
-  /* --primaryDark: #3d97fa44
-  --textColor: #f0f2f5; */
-  /* --border-color: #ccced2; */
   --shadow-1: rgba(0, 0, 0, 0.1);
-  /* --shadow-inset: rgba(255, 255, 255, 0.5); */
   --smallestFont: 1.7rem;
   --smallFont: 2.2rem;
   --midFont: 3rem;
@@ -87,11 +82,3 @@ p {
     border: 2px solid var(--secondary);
   }
 }
-/* button :hover {
-  transform: scale(1);
-} */
-/* background: radial-gradient(
-    15rem circle at bottom,
-    rgba(250, 250, 250, 0.5),
-    rgba(214, 125, 42, 0.5)
-  ); */

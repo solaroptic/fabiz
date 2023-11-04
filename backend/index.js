@@ -27,17 +27,29 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-// Serve static assets
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-app.use("/assets", express.static(path.join(__dirname, "public/assets")));
-
 // Routes
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/members", memberRoutes);
 app.use("/chat", chatRoutes);
 app.use("/message", messageRoutes);
+
+// Serve static assets
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use("/assets", express.static(path.join(__dirname, "public/assets")));
+
+// ////or////////////////???????????????????????????
+// ////or////////////////???????????????????????????
+
+// if (process.env.NODE_ENV === 'production') {
+// const __dirname = path.resolve();
+// app.use(express.static(path.join(__dirname, 'frontend/build')));
+// app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html' )))
+// } else {
+// app.get('/', (req, res) => res.send('server is ready'));
+// }
+// ////////////////////???????????????????????????
 
 // MongoDB/Mongoose Setup
 const PORT = process.env.PORT || 3001;
