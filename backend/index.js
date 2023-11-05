@@ -7,18 +7,20 @@ import helmet from "helmet";
 import morgan from "morgan";
 import { Server } from "socket.io";
 import path from "path";
-import { fileURLToPath } from "url";
+// import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import memberRoutes from "./routes/members.js";
 import chatRoutes from "./routes/chat.js";
 import messageRoutes from "./routes/message.js";
 import User from "./models/User.js";
+// env handler///////////////////
+dotenv.config({ path: "../.env" });
 
-dotenv.config();
+// express//////main////////////
 const app = express();
 
-// Middleware
+// Middleware///////////////////
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
@@ -35,20 +37,22 @@ app.use("/chat", chatRoutes);
 app.use("/message", messageRoutes);
 
 // Serve static assets
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-app.use("/assets", express.static(path.join(__dirname, "public/assets")));
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+// app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 // ////or////////////////???????????????????????????
 // ////or////////////////???????????????????????????
-
-// if (process.env.NODE_ENV === 'production') {
-// const __dirname = path.resolve();
-// app.use(express.static(path.join(__dirname, 'frontend/build')));
-// app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html' )))
-// } else {
-// app.get('/', (req, res) => res.send('server is ready'));
-// }
+// Serve static assets
+if (process.env.NODE_ENV === "production") {
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, "frontend/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => res.send("server is ready"));
+}
 // ////////////////////???????????????????????????
 
 // MongoDB/Mongoose Setup
