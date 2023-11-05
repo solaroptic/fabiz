@@ -3,6 +3,6 @@
     "react-router-dom": "^6.14.1"
   },
   "scripts": {
-    "start": "start command for render"
+    "start": "node backend/index.js"
   }
 }
