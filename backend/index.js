@@ -22,26 +22,26 @@ const app = express();
 
 // Middleware///////////////////
 app.use(express.json());
-// app.use(
-//   helmet({
-//     csp: {
-//       directives: {
-//         defaultSrc: ["'self'"],
-//         connectSrc: [
-//           "'self'",
-//           "http://127.0.0.1:30001",
-//           "https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap",
-//           "https://fonts.googleapis.com/css2?family=Grenze:wght@300;500;700&display=swap",
-//         ],
-//       },
-//     },
-//   })
-// );
+app.use(
+  helmet({
+    csp: {
+      directives: {
+        defaultSrc: ["'self'"],
+        connectSrc: [
+          "'self'",
+          "http://127.0.0.1:30001",
+          "https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap",
+          "https://fonts.googleapis.com/css2?family=Grenze:wght@300;500;700&display=swap",
+        ],
+      },
+    },
+  })
+);
 // app.use(helmet());
 // app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
-app.use(cors({ origin: true, credentials: true }));
-// app.use(cors());
+app.use(cors());
+// app.use(cors({ origin: true, credentials: true }));
 
 // Routes
 app.use("/auth", authRoutes);
