@@ -52,7 +52,6 @@ export const registerToDb = createAsyncThunk(
 export const updatedNotificationsToDb = createAsyncThunk(
   "user/sendNotifications",
   async (text, thunkAPI) => {
-    console.log("🚀 ~ file: userSlice.js:55 ~ data:");
     try {
       const token = thunkAPI.getState().auth.token;
       const id = thunkAPI.getState().auth.user._id;
