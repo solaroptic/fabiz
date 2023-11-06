@@ -3,7 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-// import helmet from "helmet";
+import helmet from "helmet";
 import morgan from "morgan";
 import { Server } from "socket.io";
 import path from "path";
@@ -22,6 +22,21 @@ const app = express();
 
 // Middleware///////////////////
 app.use(express.json());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        connectSrc: [
+          "'self'",
+          "http://127.0.0.1:30001",
+          "https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap",
+          "https://fonts.googleapis.com/css2?family=Grenze:wght@300;500;700&display=swap",
+        ],
+      },
+    },
+  })
+);
 // app.use(helmet());
 // app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
