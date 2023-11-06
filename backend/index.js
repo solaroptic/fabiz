@@ -1,9 +1,9 @@
 import express from "express";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import helmet from "helmet";
+// import helmet from "helmet";
 import morgan from "morgan";
 import { Server } from "socket.io";
 import path from "path";
@@ -22,11 +22,11 @@ const app = express();
 
 // Middleware///////////////////
 app.use(express.json());
-app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+// app.use(helmet());
+// app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+// app.use(bodyParser.json({ limit: "30mb", extended: true }));
+// app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 // Routes
@@ -37,13 +37,6 @@ app.use("/chat", chatRoutes);
 app.use("/message", messageRoutes);
 
 // Serve static assets
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-// app.use("/assets", express.static(path.join(__dirname, "public/assets")));
-
-// ////or////////////////???????????????????????????
-// ////or////////////////???????????????????????????
-// Serve static assets
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
   app.use(express.static(path.join(__dirname, "frontend/build")));
@@ -53,7 +46,6 @@ if (process.env.NODE_ENV === "production") {
 } else {
   app.get("/", (req, res) => res.send("server is ready"));
 }
-// ////////////////////???????????????????????????
 
 // MongoDB/Mongoose Setup
 const PORT = process.env.PORT || 3001;
