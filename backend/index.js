@@ -1,5 +1,5 @@
 // import bodyParser from "body-parser";
-import helmet from "helmet";
+// import helmet from "helmet";
 // import { fileURLToPath } from "url";
 import express from "express";
 import mongoose from "mongoose";
@@ -22,26 +22,26 @@ const app = express();
 
 // Middleware///////////////////
 app.use(express.json());
-app.use(
-  helmet({
-    csp: {
-      directives: {
-        connectSrc: [
-          "'self'",
-          "http://127.0.0.1:3001",
-          "https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap",
-          "https://fonts.googleapis.com/css2?family=Grenze:wght@300;500;700&display=swap",
-        ],
-        defaultSrc: ["'self'"],
-      },
-    },
-  })
-);
+// app.use(
+//   helmet({
+//     csp: {
+//       directives: {
+//         connectSrc: [
+//           "'self'",
+//           "http://127.0.0.1:3001",
+//           "https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap",
+//           "https://fonts.googleapis.com/css2?family=Grenze:wght@300;500;700&display=swap",
+//         ],
+//         defaultSrc: ["'self'"],
+//       },
+//     },
+//   })
+// );
 // app.use(helmet());
 // app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
-app.use(cors());
-// app.use(cors({ origin: true, credentials: true }));
+// app.use(cors());
+app.use(cors({ origin: true }));
 
 // Routes
 app.use("/auth", authRoutes);
