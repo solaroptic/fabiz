@@ -1,5 +1,5 @@
 // import bodyParser from "body-parser";
-// import helmet from "helmet";
+import helmet from "helmet";
 // import { fileURLToPath } from "url";
 import express from "express";
 import mongoose from "mongoose";
