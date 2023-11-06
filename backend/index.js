@@ -27,9 +27,9 @@ app.use(
     csp: {
       directives: {
         defaultSrc: ["'self'"],
-        connectSrc: [
+        "connect-src": [
           "'self'",
-          "http://127.0.0.1:30001",
+          "http://127.0.0.1:3001",
           "https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap",
           "https://fonts.googleapis.com/css2?family=Grenze:wght@300;500;700&display=swap",
         ],
