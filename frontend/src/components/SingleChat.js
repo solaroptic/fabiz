@@ -9,7 +9,7 @@ import { Box, FormControl } from "@chakra-ui/react";
 import ChatLoading from "./ChatLoading";
 import styles from "../components-css/SingleChatCSS.module.css";
 
-const ENDPOINT = "http://localhost:3001";
+const ENDPOINT = "https://fabian-project1.onrender.com";
 const SingleChat = ({ isFetchAgain, setIsFetchAgain }) => {
   console.log("Single Chat runs");
   const [newMessage, setNewMessage] = useState("");
