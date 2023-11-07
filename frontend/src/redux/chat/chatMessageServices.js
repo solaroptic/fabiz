@@ -43,7 +43,6 @@ const getChats = async (token) => {
   return response;
 };
 const postChat = async (userId, user, token) => {
-  console.log("🎲🎲🎲postchat service");
   const createChatsConfig = {
     headers: {
       authorization: `Bearer ${token}`,
@@ -54,7 +53,6 @@ const postChat = async (userId, user, token) => {
     { userId, user },
     createChatsConfig
   );
-  console.log("🎲🎲🎲🎲🎲", response);
   return response;
 };
 

@@ -72,7 +72,9 @@ mongoose
   })
   .then(() => {
     const server = app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT} perfectly`);
+      console.log(
+        `Server is running on port ${PORT} perfectly, origin is ${process.env.CLIENT_ORIGIN}`
+      );
       setupWebSocketServer(server); // This is correct, as it sets up WebSocket server
     });
   })
@@ -84,9 +86,9 @@ function setupWebSocketServer(server) {
   const io = new Server(server, {
     pingTimeout: 60000,
     cors: {
-      origin: "http://localhost:3000",
+      origin: "https://fabian-project1.onrender.com:3000",
       allowedHeaders: ["*"],
-      allowedOrigins: ["http://localhost:3000"],
+      allowedOrigins: ["https://fabian-project1.onrender.com:3000"],
     },
   });
 
@@ -121,7 +123,6 @@ function setupWebSocketServer(server) {
       const recipient = chat.users.find(
         (chatUser) => chatUser._id !== newMessageReceived.sender._id
       );
-      console.log("💎", recipient);
       chat.users.forEach((user) => {
         if (user._id == newMessageReceived.sender._id) {
           return; // This is correct, it prevents the sender from processing their own message
