@@ -12,6 +12,11 @@
   outline: 0.2rem solid var(--primary);
   outline-offset: 0.1rem;
 }
+*::placeholder {
+  ::placeholder {
+    color: rgba(171, 91, 56, 0.4);
+  }
+}
 
 #root {
   height: 100vh;
