@@ -20,7 +20,6 @@ const Profile = () => {
     state.profileState.userName === user?.userName ? user : state.profileState;
 
   const setUpChat = async () => {
-    console.log("happy fishtix");
     const data = await dispatch(chatToDB(state.profileState._id));
     if (!chats.find((c) => c._id === data._id))
       dispatch(setChats([data.payload, ...chats]));

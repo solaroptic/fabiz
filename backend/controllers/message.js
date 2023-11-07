@@ -7,7 +7,6 @@ export const sendMessage = async (req, res) => {
   if (!content || !chatId) {
     return res.sendStatus(400);
   }
-  // console.log(req.user.id, "informal chewbacca");
 
   let newMessage = {
     sender: req.user.id,

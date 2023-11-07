@@ -12,7 +12,6 @@ const initialState = {
 export const sendMessage = createAsyncThunk(
   "message/create",
   async (data, thunkAPI) => {
-    console.log("🚀 ~ file: chatMessageSlice.js:14 ~ data:");
     try {
       const token = thunkAPI.getState().auth.token;
       const selectedChat = thunkAPI.getState().auth.selectedChat;
@@ -41,7 +40,6 @@ export const sendMessage = createAsyncThunk(
 export const messagesFromDb = createAsyncThunk(
   "chatMessages/get",
   async (text, thunkAPI) => {
-    console.log("🚀🩲✨ ~ file: chatMessageSlice.js:43 ~ data:");
     try {
       const token = thunkAPI.getState().auth.token;
       const selectedChat = thunkAPI.getState().auth.selectedChat;
@@ -68,7 +66,6 @@ export const messagesFromDb = createAsyncThunk(
 export const chatsFromDb = createAsyncThunk(
   "chats/receive",
   async (text, thunkAPI) => {
-    console.log("🚀🎈🎈 ~ file: chatMessageSlice.js:70 ~ getChatsdata:");
     try {
       const token = thunkAPI.getState().auth.token;
       const response = await chatMessageService.getChats(token);
@@ -90,13 +87,11 @@ export const chatsFromDb = createAsyncThunk(
 export const chatToDB = createAsyncThunk(
   "chat/initiate",
   async (userId, thunkAPI) => {
-    console.log("🚀🚀🚀 ~ file: chatMessageSlice.js:93 ~ data:");
     try {
       const token = thunkAPI.getState().auth.token;
       const user = thunkAPI.getState().auth.user;
 
       const response = await chatMessageService.postChat(userId, user, token);
-      console.log("🎲🎲🎲", response);
       return response.data;
     } catch (error) {
       const message = {

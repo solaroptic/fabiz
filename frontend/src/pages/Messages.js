@@ -8,7 +8,6 @@ import styles from "../pages-css/Messages.module.css";
 import SingleChat from "components/SingleChat";
 
 const Messages = () => {
-  console.log("Messages - Parent runs");
   const { state } = useLocation();
   const user = useSelector((state) => state.auth.user);
   const [isFetchAgain, setIsFetchAgain] = useState();

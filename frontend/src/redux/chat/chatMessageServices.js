@@ -17,7 +17,6 @@ const createChatMessage = async (text, token) => {
 };
 
 const getMessages = async (selectedChatId, token) => {
-  console.log("hi");
   const GetChatsConfig = {
     headers: {
       authorization: `Bearer ${token}`,
@@ -28,7 +27,6 @@ const getMessages = async (selectedChatId, token) => {
     `${API_BASE_URL_A}/${selectedChatId}`,
     GetChatsConfig
   );
-  console.log("🎈🎈🎈🎈🎈🎈", response.data);
   return response.data;
 };
 const getChats = async (token) => {

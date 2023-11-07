@@ -27,7 +27,7 @@ const NavBar = () => {
       if (error.status === 404) {
         console.log("User not found");
       } else {
-        console.log(error);
+        console.error(error);
       }
     }
   };

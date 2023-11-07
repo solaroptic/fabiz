@@ -18,8 +18,6 @@ import styles from "../components-css/SideDrawerCSS.module.css";
 import MenuListing from "./MenuListing";
 
 const SideDrawer = ({ state }) => {
-  console.log("Side Drawer runs");
-
   const [isNotesOpen, setIsNotesOpen] = useState(false);
   const memberId = state?.other?._id || null;
   const toast = useToast();

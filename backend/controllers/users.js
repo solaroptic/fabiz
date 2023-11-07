@@ -20,7 +20,6 @@ export const getAllUsers = async (req, res) => {
   try {
     const users = await User.find({ _id: { $ne: id } });
     res.status(200).json(users);
-    console.log(users);
   } catch (err) {
     res.status(404).json({ message: err.message });
   }

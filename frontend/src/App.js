@@ -15,7 +15,6 @@ import ProfileEdit from "pages/ProfileEdit";
 const App = () => {
   // const get = async () => {
   //   const res = await fetch("http://localhost:8000");
-  //   console.log(res);
   // };
   // get();
   return (

@@ -9,8 +9,6 @@ const Member = ({ member, id, profilePictureUrl, name, location }) => {
   const isHighlight = notifications.includes(name);
 
   const handleClick = () => {
-    console.log(id);
-    console.log(member);
     // setMemberInfo(member);
     try {
       navigate(`/profile/:${id}`, { state: { profileState: member } });

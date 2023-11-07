@@ -93,32 +93,25 @@ function setupWebSocketServer(server) {
   });
 
   io.on("connection", (socket) => {
-    console.log("🎃User connected to socket:", socket.id);
 
     socket.on("setup", async (userData) => {
-      console.log("🎃User setup");
       socket.join(userData._id); // This is correct, it joins the socket to a room based on user ID
       socket.emit("connected"); // This is correct, it sends a "connected" event to the client
     });
 
     socket.on("join chat", (room) => {
-      console.log("🎃User join");
       socket.join(room); // This is correct, it joins the socket to a chat room
-      console.log("User joined room: " + room);
     });
 
     socket.on("typing", (room) => {
-      console.log("🎃User typing");
       io.to(room).emit("typing"); // This is correct, it emits a "typing" event to the chat room
     });
 
     socket.on("stop typing", (room) => {
-      console.log("🎃User stop typing");
       io.to(room).emit("stop typing"); // This is correct, it emits a "stop typing" event to the chat room
     });
 
     socket.on("new message", async (newMessageReceived) => {
-      console.log("New message received:", newMessageReceived);
       const chat = newMessageReceived?.chat;
       const recipient = chat.users.find(
         (chatUser) => chatUser._id !== newMessageReceived.sender._id
@@ -142,7 +135,6 @@ function setupWebSocketServer(server) {
     });
 
     socket.on("disconnect", () => {
-      console.log("🎃User disconnected");
       console.log("User disconnected from socket:", socket.id);
     });
   });

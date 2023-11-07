@@ -12,12 +12,10 @@ import { updatedNotificationsToDb } from "redux/user/userSlice";
 import { chatsFromDb } from "redux/chat/chatMessageSlice";
 
 const MyChats = ({ isFetchAgain }) => {
-  console.log("My Chats runs");
   const dispatch = useDispatch();
   const { user, selectedChat } = useSelector((state) => state.auth);
   const { chats } = useSelector((state) => state.MsgChats);
   const toast = useToast();
-  console.log("✨🎭✨MC", selectedChat);
 
   const getSender = (user, users) => {
     return users[0]?._id === user?._id
@@ -40,7 +38,6 @@ const MyChats = ({ isFetchAgain }) => {
     try {
       await dispatch(chatsFromDb());
     } catch (error) {
-      console.log(error);
       toast({
         title: "Error retrieving chat!",
         status: "error",
@@ -55,7 +52,6 @@ const MyChats = ({ isFetchAgain }) => {
   useEffect(() => {
     fetchChats();
   }, [isFetchAgain]); // eslint-disable-line react-hooks/exhaustive-deps
-  // console.log("🎑🎑🎑", chats);
   return (
     <div className={styles["myChats-div-container"]}>
       <div className={styles["myChats-div-heading"]}>Chats</div>

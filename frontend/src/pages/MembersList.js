@@ -8,7 +8,6 @@ import { membersListFromDb } from "redux/user/userSlice";
 import styles from "../pages-css/List.module.css";
 
 const MembersList = () => {
-  console.log("Members list runs");
   const dispatch = useDispatch();
   const { members } = useSelector((state) => state.auth);
 
@@ -18,7 +17,7 @@ const MembersList = () => {
       const membersReturned = response.payload.data;
       dispatch(setMembers(membersReturned));
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

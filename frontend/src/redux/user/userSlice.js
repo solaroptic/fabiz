@@ -29,7 +29,6 @@ export const logintoDb = createAsyncThunk(
 export const registerToDb = createAsyncThunk(
   "user/registerInfo",
   async (formData, thunkAPI) => {
-    console.log("🚀 ~ file: userSlice.js:33 ~ data:", formData);
     try {
       return await userServices.sendRegisterInfo({
         formData,
@@ -78,7 +77,6 @@ export const updatedNotificationsToDb = createAsyncThunk(
 export const membersListFromDb = createAsyncThunk(
   "cats/members",
   async (data, thunkAPI) => {
-    console.log("🚀 ~ file: userSlice.js:84 ~ data:");
     try {
       const token = thunkAPI.getState().auth.token;
       return await userServices.getMembers(token);

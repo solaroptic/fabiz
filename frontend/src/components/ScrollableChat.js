@@ -71,7 +71,6 @@ const ScrollableChat = ({ messages }) => {
 export default ScrollableChat;
 
 // const isSameSender = (messages, m, i, userId) => {
-//   console.log(messages, "🛒🛒🛒", m);
 //   return (
 //     i < messages?.length - 1 &&
 //     (messages[i + 1]?.sender?._id !== m.sender?._id ||

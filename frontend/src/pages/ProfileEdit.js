@@ -16,7 +16,6 @@ import Button from "../components/Button";
 import styles from "../pages-css/ProfileEdit.module.css";
 
 const ProfileEdit = () => {
-  // const cld = new Cloudinary({ cloud: { cloudName: "duysbh0j0" } });
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const [image, setImage] = useState("");
@@ -24,9 +23,7 @@ const ProfileEdit = () => {
   const [isUpdatingPic, setIsUpdatingPic] = useState(false);
   const id = user._id;
   const toast = useToast();
-  console.log(id);
   const navigate = useNavigate();
-  // const [file, setFile] = useState(null);
 
   const initialValues = {
     userName: user.userName,
@@ -45,7 +42,7 @@ const ProfileEdit = () => {
       dispatch(setPic(image));
       navigate("/");
     } catch (err) {
-      console.log(err);
+      console.error(err);
       setIsLoading(false);
     }
   };
@@ -86,6 +83,7 @@ const ProfileEdit = () => {
   };
   //////////////////////////////
   const handleFormSubmit = async (values) => {
+    console.log("🧨 profile edit data submit btn");
     try {
       const payload = {
         location: values.location,
@@ -172,7 +170,9 @@ const ProfileEdit = () => {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            <Button type="submit">Submit Edit</Button>
+            <Button type="submit" onClick={handleFormSubmit}>
+              Submit Edit
+            </Button>
           </form>
         )}
       </Formik>

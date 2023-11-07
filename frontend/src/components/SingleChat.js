@@ -11,7 +11,6 @@ import styles from "../components-css/SingleChatCSS.module.css";
 
 const ENDPOINT = "https://fabian-project1.onrender.com";
 const SingleChat = ({ isFetchAgain, setIsFetchAgain }) => {
-  console.log("Single Chat runs");
   const [newMessage, setNewMessage] = useState("");
   const [messageInput, setMessageInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -20,9 +19,6 @@ const SingleChat = ({ isFetchAgain, setIsFetchAgain }) => {
     (state) => state.MsgChats
   );
   const { chats } = useSelector((state) => state.MsgChats);
-  console.log("✨🧨✨SC", chats);
-  // console.log("✨✨✨SC", allMessages);
-  console.log("✨🎭✨SC", selectedChat);
   let selectedChatCompare = allMessages[0]?.chat;
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -51,7 +47,6 @@ const SingleChat = ({ isFetchAgain, setIsFetchAgain }) => {
   }, [user]);
 
   useEffect(() => {
-    console.log("singlechat51 useFX 🎍");
     (async () => {
       if (!token) {
         navigate("/login");
@@ -66,16 +61,14 @@ const SingleChat = ({ isFetchAgain, setIsFetchAgain }) => {
     // }
   }, [user, selectedChat, chats, token, isError, navigate, dispatch]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
-    console.log("singlechat63 useFX 🎍");
     (async () => {
       if (newMessage) {
         try {
           const { payload } = await dispatch(sendMessage(newMessage));
-          console.log("!!", payload);
           socketRef.current.emit("new message", payload);
           setNewMessage("");
         } catch (error) {
-          console.log(error);
+          console.error(error);
         }
       }
     })();

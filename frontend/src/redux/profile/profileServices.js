@@ -1,7 +1,6 @@
 import axios from "../../config/axios";
 const API_BASE_URL = "/users";
 const sendProfilePic = async (data) => {
-  console.log("furry chinchillla");
   const response = await fetch(
     "https://api.cloudinary.com/v1_1/duysbh0j0/image/upload",
     {
@@ -9,7 +8,6 @@ const sendProfilePic = async (data) => {
       body: data,
     }
   ).then((res) => res.json());
-  console.log(response.secure_url);
   return response.secure_url;
 };
 const saveProfilePic = async (picURL, id, token) => {

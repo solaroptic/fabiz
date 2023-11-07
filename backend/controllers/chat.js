@@ -5,11 +5,9 @@ import User from "../models/User.js";
 export const accessChat = async (req, res) => {
   const { userId } = req.body;
   const { user } = req.body;
-  console.log("access chat controller ran", user, userId);
   const self = user._id;
 
   if (!userId) {
-    console.log("user param not given to get messages");
     return res.sendStatus(400);
   }
 
@@ -36,10 +34,8 @@ export const accessChat = async (req, res) => {
       isGroupChat: false,
       users: [self, userId],
     };
-    console.log(chatData.users);
     try {
       const createdChat = await Chat.create(chatData);
-      console.log(createdChat);
       const FullChat = await Chat.findOne({ _id: createdChat._id }).populate(
         "users",
         "-password"
