@@ -4,9 +4,7 @@ import User from "../models/User.js";
 
 export const sendMessage = async (req, res) => {
   const { content, chatId } = req.body;
-  console.log("sendMessageController 🥼", chatId);
   if (!content || !chatId) {
-    console.log("chatId invalid, 🎲");
     return res.sendStatus(400);
   }
   // console.log(req.user.id, "informal chewbacca");
@@ -36,7 +34,6 @@ export const sendMessage = async (req, res) => {
 };
 
 export const allMessages = async (req, res) => {
-  console.log("allMessages for 1 chat 🎍");
   try {
     const messages = await Message.find({ chat: req.params.chatId })
       .populate("sender", "userName picturePath")

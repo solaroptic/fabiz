@@ -1,4 +1,3 @@
-// import bcrypt from "bcrypt";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
@@ -7,8 +6,6 @@ export const register = async (req, res) => {
   try {
     const { userName, email, password } = req.body.formData;
 
-    // const salt = await bcrypt.genSalt();
-    // const passwordHash = await bcrypt.hash(password, salt);
     const salt = await bcryptjs.genSalt();
     const passwordHash = await bcryptjs.hash(password, salt);
 

@@ -1,14 +1,10 @@
-// import expressAsyncHandler from "express-async-handler";
 import Chat from "../models/ChatModel.js";
 import User from "../models/User.js";
-// import Message from "../models/MessageModel.js";
 
 // const asyncHandler = expressAsyncHandler;
 export const accessChat = async (req, res) => {
-  console.log("👗👗👗👗 chat created by AccChat");
   const { userId } = req.body;
   const { user } = req.body;
-  console.log("👗👗👗👗 AccChat", userId, user);
   console.log("access chat controller ran", user, userId);
   const self = user._id;
 
@@ -56,7 +52,6 @@ export const accessChat = async (req, res) => {
 };
 
 export const fetchChats = async (req, res) => {
-  console.log("🎟🎟🎟 fetch chats chat controller");
   try {
     Chat.find({ users: { $elemMatch: { $eq: req.user.id } } })
       .populate("users", "-password")

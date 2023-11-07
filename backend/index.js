@@ -22,6 +22,9 @@ const app = express();
 
 // Middleware///////////////////
 app.use(express.json());
+app.use(morgan("common"));
+// app.use(cors());
+app.use(cors({ origin: true }));
 // app.use(
 //   helmet({
 //     csp: {
@@ -39,9 +42,6 @@ app.use(express.json());
 // );
 // app.use(helmet());
 // app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
-app.use(morgan("common"));
-// app.use(cors());
-app.use(cors({ origin: true }));
 
 // Routes
 app.use("/auth", authRoutes);

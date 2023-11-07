@@ -47,8 +47,7 @@ export const updateUser = async (req, res) => {
     const { id } = req.params;
     const { userName, location, about, news } = req.body;
     const user = await User.findById(id);
-    // console.log(user);
-    // console.log(userName);
+
     if (user) {
       user.userName = userName;
       user.location = location;
