@@ -4,8 +4,8 @@ const API_BASE_URL_B = "/users";
 const API_BASE_URL_C = "/members";
 
 const sendLoginInfo = async (text) => {
+  console.log("🎲 service");
   const response = await axios.post(API_BASE_URL_A + "/login", text);
-  console.log("🎲 service", response);
   return response.data;
 };
 const sendRegisterInfo = async (formData) => {
