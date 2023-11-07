@@ -10,7 +10,6 @@ const initialState = {
 export const logintoDb = createAsyncThunk(
   "user/sendLogin",
   async (data, thunkAPI) => {
-    console.log("🚀 ~ file:  userSlice.js:13 ~ data:");
     try {
       return await userServices.sendLoginInfo(data);
     } catch (error) {
