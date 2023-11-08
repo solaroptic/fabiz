@@ -1,5 +1,5 @@
 import NavBar from "components/NavBar";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "../pages-css/Landing.module.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,8 +10,6 @@ const Landing = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const isAuth = Boolean(useSelector((state) => state.auth.token));
-  console.log("✨", user.userName, user.email);
-  console.log("✨✨", user.userName, user.email);
 
   useEffect(() => {
     console.log("🧨🧨", isAuth);
@@ -19,8 +17,8 @@ const Landing = () => {
       const login = async () => {
         try {
           const values = {
-            email: user.email,
-            password: user.password,
+            email: user?.email,
+            password: user?.password,
           };
           const loggedInResponse = await dispatch(logintoDb(values));
           if (loggedInResponse) {
@@ -37,7 +35,7 @@ const Landing = () => {
       };
       login();
     }
-  }, [isAuth]);
+  }, [isAuth]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className={styles["background-div-layer"]}>
