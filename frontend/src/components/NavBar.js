@@ -18,7 +18,7 @@ const NavBar = () => {
     navigate("/");
     dispatch(setLogout());
   };
-
+  console.log("🎲", user);
   const handleClick = () => {
     const userID = user._id;
     try {
