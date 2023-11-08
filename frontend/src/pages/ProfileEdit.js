@@ -82,7 +82,8 @@ const ProfileEdit = () => {
     }
   };
   //////////////////////////////
-  const handleFormSubmit = async (values) => {
+  const handleFormSubmit = async (e, values) => {
+    e.preventDefault();
     console.log("🧨 profile edit data submit btn");
     try {
       const payload = {
@@ -170,9 +171,7 @@ const ProfileEdit = () => {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            <Button type="submit" onClick={handleFormSubmit}>
-              Submit Edit
-            </Button>
+            <Button type="submit">Submit Edit</Button>
           </form>
         )}
       </Formik>
