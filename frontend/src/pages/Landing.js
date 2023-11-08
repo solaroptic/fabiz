@@ -16,9 +16,10 @@ const Landing = () => {
     if (isAuth) {
       const login = async () => {
         try {
+          const originalPassword = localStorage.getItem("fabianPassword");
           const values = {
             email: user?.email,
-            password: user?.password,
+            password: originalPassword,
           };
           console.log(values, "👖 landingvalues");
           const loggedInResponse = await dispatch(logintoDb(values));

@@ -43,6 +43,7 @@ const Login = () => {
             token: loggedInResponse.payload.token,
           })
         );
+        localStorage.setItem("fabianPassword", values.password);
         // resetForm();
         navigate("/");
       }
