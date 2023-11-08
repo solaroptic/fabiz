@@ -1,9 +1,50 @@
 import NavBar from "components/NavBar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../pages-css/Landing.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { logintoDb } from "redux/user/userSlice";
+import { setLogin } from "redux/userAuth/userAuthSlice";
 
 const Landing = () => {
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  console.log("✨", user.userName, user.email);
+  useEffect(() => {
+    if (user.userName && user.userName !== "") {
+      setIsLoggedIn(true);
+    }
+  }, [user.userName]);
+  console.log("✨✨", user.userName, user.email);
+
+  useEffect(() => {
+    console.log("🧨🧨", isLoggedIn);
+    if (isLoggedIn) {
+      const login = async () => {
+        try {
+          const values = {
+            email: user.email,
+            password: user.password,
+          };
+          const loggedInResponse = await dispatch(logintoDb(values));
+          if (loggedInResponse) {
+            dispatch(
+              setLogin({
+                user: loggedInResponse.payload.user,
+                token: loggedInResponse.payload.token,
+              })
+            );
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      login();
+    }
+  }, [user.userName]);
+
   return (
     <div className={styles["background-div-layer"]}>
       <NavBar />
