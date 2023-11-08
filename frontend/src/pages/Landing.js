@@ -9,19 +9,13 @@ import { setLogin } from "redux/userAuth/userAuthSlice";
 const Landing = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const isAuth = Boolean(useSelector((state) => state.auth.token));
   console.log("✨", user.userName, user.email);
-  useEffect(() => {
-    if (user.userName && user.userName !== "") {
-      setIsLoggedIn(true);
-    }
-  }, [user.userName]);
   console.log("✨✨", user.userName, user.email);
 
   useEffect(() => {
-    console.log("🧨🧨", isLoggedIn);
-    if (isLoggedIn) {
+    console.log("🧨🧨", isAuth);
+    if (isAuth) {
       const login = async () => {
         try {
           const values = {
@@ -43,7 +37,7 @@ const Landing = () => {
       };
       login();
     }
-  }, [user.userName]);
+  }, [isAuth]);
 
   return (
     <div className={styles["background-div-layer"]}>
