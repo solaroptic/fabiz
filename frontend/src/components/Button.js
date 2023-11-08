@@ -1,13 +1,9 @@
 import React from "react";
-import ButtonCSS from "../components-css/ButtonCSS.module.css";
+import styles from "../components-css/ButtonCSS.module.css";
 
-const Button = ({ children, onClick, type, className }) => {
+const Button = ({ children, onClick, className }) => {
   return (
-    <button
-      onClick={onClick}
-      type={type === "submit" ? "submit" : "button"}
-      className={ButtonCSS["standard"]}
-    >
+    <button onClick={onClick} type="button" className={styles["standard"]}>
       {children}
     </button>
   );

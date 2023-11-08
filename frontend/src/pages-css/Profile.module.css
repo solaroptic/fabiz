@@ -94,4 +94,8 @@
     top: 7.2%;
     right: 4%;
   }
+  .profile-img-upgrade img {
+    width: 70px;
+    height: 70px;
+  }
 }

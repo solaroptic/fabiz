@@ -12,7 +12,7 @@ import {
   sendPicToDb,
   sendUserInfoToDb,
 } from "redux/profile/profileSlice";
-import Button from "../components/Button";
+// import Button from "../components/Button";
 import styles from "../pages-css/ProfileEdit.module.css";
 
 const ProfileEdit = () => {
@@ -173,7 +173,12 @@ const ProfileEdit = () => {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            <Button type="submit">Submit Edit</Button>
+            <button
+              className={styles["profileEdit-button-dataSubmit"]}
+              type="submit"
+            >
+              Submit Edit
+            </button>
           </form>
         )}
       </Formik>

@@ -51,7 +51,11 @@ const Profile = () => {
         </Link>
       )}
       <header className={styles["header-pic"]}>
-        <ProfilePic src={person?.picturePath} alt="Profile photo" />
+        <ProfilePic
+          src={person?.picturePath}
+          alt="Profile photo"
+          className={styles["profile-img-upgrade"]}
+        />
       </header>
       <section className={styles["section-info"]}>
         <p>{person?.userName}</p>
