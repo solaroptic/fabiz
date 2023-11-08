@@ -82,9 +82,7 @@ const ProfileEdit = () => {
     }
   };
   //////////////////////////////
-  const handleFormSubmit = async (e, values) => {
-    console.log("🧨 profile edit data submit btn");
-    e.preventDefault();
+  const handleFormSubmit = async (values) => {
     console.log("🎰 profile edit data submit btn 2", values);
     try {
       const payload = {

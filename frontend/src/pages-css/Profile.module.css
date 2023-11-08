@@ -57,6 +57,10 @@
   color: var(--white);
   animation: flash 1.5s infinite;
 }
+.profile-img-upgrade img {
+  width: 125px;
+  height: 125px;
+}
 
 @keyframes flash {
   0% {
