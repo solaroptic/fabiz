@@ -83,8 +83,9 @@ const ProfileEdit = () => {
   };
   //////////////////////////////
   const handleFormSubmit = async (e, values) => {
-    e.preventDefault();
     console.log("🧨 profile edit data submit btn");
+    e.preventDefault();
+    console.log("🎰 profile edit data submit btn 2", values);
     try {
       const payload = {
         location: values.location,
@@ -92,8 +93,9 @@ const ProfileEdit = () => {
         about: values.about,
         userName: values.userName,
       };
+      console.log("Sending user info to database...");
       const data = await dispatch(sendUserInfoToDb(payload));
-      console.log(data);
+      console.log("User info sent successfully:", data);
       dispatch(setNewUser(payload));
       navigate("/");
     } catch (err) {
