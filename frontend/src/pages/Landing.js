@@ -20,6 +20,7 @@ const Landing = () => {
             email: user?.email,
             password: user?.password,
           };
+          console.log(values, "👖 landingvalues");
           const loggedInResponse = await dispatch(logintoDb(values));
           if (loggedInResponse) {
             dispatch(

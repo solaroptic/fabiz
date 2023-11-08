@@ -33,6 +33,7 @@ const Login = () => {
 
   const login = async (values, onSubmitProps) => {
     try {
+      console.log(values, "👖 loginvalues");
       const loggedInResponse = await dispatch(logintoDb(values));
       onSubmitProps.resetForm();
       if (loggedInResponse) {
