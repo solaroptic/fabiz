@@ -10,7 +10,6 @@ const initialState = {
 export const sendImageToCloud = createAsyncThunk(
   "profile/sendImage",
   async (data, thunkAPI) => {
-    console.log("🚀 ~ file:  profileSlice.js:13 ~ data:");
     try {
       const imageUrl = await profileServices.sendProfilePic(data);
       return imageUrl;
@@ -31,7 +30,6 @@ export const sendImageToCloud = createAsyncThunk(
 export const sendPicToDb = createAsyncThunk(
   "profile/saveImage",
   async (data, thunkAPI) => {
-    console.log("🚀 ~ file: profileSlice.js:34 ~ data:");
     try {
       const token = thunkAPI.getState().auth.token;
       const id = thunkAPI.getState().auth.user._id;
@@ -55,7 +53,6 @@ export const sendPicToDb = createAsyncThunk(
 export const sendUserInfoToDb = createAsyncThunk(
   "profile/sendProfile",
   async (text, thunkAPI) => {
-    console.log("🚀 ~ file: profileSlice.js:59 ~ data:");
     try {
       const token = thunkAPI.getState().auth.token;
       const id = thunkAPI.getState().auth.user._id;

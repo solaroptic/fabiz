@@ -57,9 +57,11 @@
   color: var(--white);
   animation: flash 1.5s infinite;
 }
-.profile-img-upgrade img {
-  width: 125px;
-  height: 125px;
+.profile-pic img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--secondary);
 }
 
 @keyframes flash {
@@ -98,8 +100,9 @@
     top: 7.2%;
     right: 4%;
   }
-  .profile-img-upgrade img {
-    width: 70px;
-    height: 70px;
+  .profile-pic img {
+    width: 78px;
+    height: 78px;
+    border: 2px solid var(--secondary);
   }
 }

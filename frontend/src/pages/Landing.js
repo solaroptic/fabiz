@@ -12,7 +12,6 @@ const Landing = () => {
   const isAuth = Boolean(useSelector((state) => state.auth.token));
 
   useEffect(() => {
-    console.log("🧨🧨", isAuth);
     if (isAuth) {
       const login = async () => {
         try {
@@ -21,7 +20,6 @@ const Landing = () => {
             email: user?.email,
             password: originalPassword,
           };
-          console.log(values, "👖 landingvalues");
           const loggedInResponse = await dispatch(logintoDb(values));
           if (loggedInResponse) {
             dispatch(

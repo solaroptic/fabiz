@@ -37,7 +37,6 @@ const ProfileEdit = () => {
     try {
       setIsLoading(true);
       const data = await dispatch(sendPicToDb(image));
-      console.log(data);
       setIsLoading(false);
       dispatch(setPic(image));
       navigate("/");
@@ -83,7 +82,6 @@ const ProfileEdit = () => {
   };
   //////////////////////////////
   const handleFormSubmit = async (values) => {
-    console.log("🎰 profile edit data submit btn 2", values);
     try {
       const payload = {
         location: values.location,
@@ -91,13 +89,11 @@ const ProfileEdit = () => {
         about: values.about,
         userName: values.userName,
       };
-      console.log("Sending user info to database...");
       const data = await dispatch(sendUserInfoToDb(payload));
-      console.log("User info sent successfully:", data);
       dispatch(setNewUser(payload));
       navigate("/");
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 

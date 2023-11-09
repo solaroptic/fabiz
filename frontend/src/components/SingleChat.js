@@ -51,9 +51,8 @@ const SingleChat = ({ isFetchAgain, setIsFetchAgain }) => {
       if (!token) {
         navigate("/login");
       } else if (user) {
-        const fireChicken = await dispatch(messagesFromDb());
+        await dispatch(messagesFromDb());
         socketRef.current.emit("join chat", selectedChat?._id);
-        console.log(fireChicken);
       }
     })();
     // if (isError) {
@@ -125,7 +124,10 @@ const SingleChat = ({ isFetchAgain, setIsFetchAgain }) => {
             {!selectedChat?.isGroupChat ? (
               <span className={styles["singleChat-heading-span"]}>
                 {getSender(selectedChat?.users)}
-                <ProfilePic src={getSenderPic(selectedChat?.users)} />
+                <ProfilePic
+                  className={styles["chat-img"]}
+                  src={getSenderPic(selectedChat?.users)}
+                />
               </span>
             ) : (
               <span

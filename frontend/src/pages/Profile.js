@@ -54,7 +54,7 @@ const Profile = () => {
         <ProfilePic
           src={person?.picturePath}
           alt="Profile photo"
-          className={styles["profile-img-upgrade"]}
+          className={styles["profile-pic"]}
         />
       </header>
       <section className={styles["section-info"]}>

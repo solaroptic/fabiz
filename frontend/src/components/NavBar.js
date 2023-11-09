@@ -18,7 +18,6 @@ const NavBar = () => {
     navigate("/");
     dispatch(setLogout());
   };
-  console.log("🎲", user, isAuth);
   const handleClick = () => {
     const userID = user._id;
     try {
