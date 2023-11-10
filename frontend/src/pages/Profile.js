@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { IoSettingsSharp } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import BackIcon from "components/BackIcon";
-import styles from "../pages-css/Profile.module.css";
 import NavBar from "components/NavBar";
 import { chatToDB, setChats } from "redux/chat/chatMessageSlice";
 import { setSelectedChat } from "redux/userAuth/userAuthSlice";
 import Button from "../components/Button";
+import styles from "../pages-css/Profile.module.css";
 
 const Profile = () => {
   const { state } = useLocation();
@@ -54,7 +54,7 @@ const Profile = () => {
         <ProfilePic
           src={person?.picturePath}
           alt="Profile photo"
-          className={styles["profile-pic"]}
+          id={styles["profile-pic"]}
         />
       </header>
       <section className={styles["section-info"]}>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "./Spinner";
+import styles from "../components-css/PicCSS.module.css";
 
 const ProfilePic = ({ src }) => {
   const [isLoading, setIsLoading] = useState(true);
-  
 
   const loadImage = () => {
     const img = new Image();
@@ -23,7 +23,7 @@ const ProfilePic = ({ src }) => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <img src={src} alt="Profile" className="profilePic" />
+        <img src={src} alt="Profile" className={styles["profile-pic"]} />
       )}
     </span>
   );

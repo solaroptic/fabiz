@@ -124,10 +124,7 @@ const SingleChat = ({ isFetchAgain, setIsFetchAgain }) => {
             {!selectedChat?.isGroupChat ? (
               <span className={styles["singleChat-heading-span"]}>
                 {getSender(selectedChat?.users)}
-                <ProfilePic
-                  className={styles["chat-img"]}
-                  src={getSenderPic(selectedChat?.users)}
-                />
+                <ProfilePic src={getSenderPic(selectedChat?.users)} />
               </span>
             ) : (
               <span
