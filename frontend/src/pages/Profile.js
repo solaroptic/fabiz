@@ -64,11 +64,6 @@ const Profile = () => {
         </Link>
       )}
       <header className={styles["header-pic"]}>
-        <ProfilePic
-          src={person?.picturePath}
-          alt="Profile photo"
-          className={styles["profile-pic"]}
-        />
         <span>
           {isLoading ? (
             <Spinner />
