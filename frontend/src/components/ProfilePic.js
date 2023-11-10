@@ -9,7 +9,6 @@ const ProfilePic = ({ src }) => {
     const img = new Image();
     img.src = src;
     img.onload = () => {
-      // setImage(img);
       setIsLoading(false);
     };
   };
