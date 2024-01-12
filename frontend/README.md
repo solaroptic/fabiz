@@ -4,10 +4,10 @@ Connect with people who share your last name, near and far, and explore your sha
 
 ## Features
 
-Real-time messaging: Chat effortlessly with fellow [Your Last Name]s using Socket.io.
+Real-time messaging: Chat effortlessly with fellow Fabian-based names using Socket.io.
 User profiles: Create a profile to share information about yourself and your family history.
 Search and connect: Find other Fabian derivatives based on location and specific name.
-Roots discussion forum: Engage in conversations about ancestry, family stories, and shared heritage.
+Geneology map: Engage in conversations to develop maps of family history.
 
 ## Technology Stack
 
@@ -24,7 +24,8 @@ Install dependencies:
 Bash
 cd fabiz_test
 npm install
-Create a MongoDB database:
+Create your database or:
+Connect with me to share MongoDB database access:
 Start the development server:
 Bash
 npm run dev
