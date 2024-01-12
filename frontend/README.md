@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Project Fabian
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Connect with people who share your last name, near and far, and explore your shared roots together!
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+Real-time messaging: Chat effortlessly with fellow [Your Last Name]s using Socket.io.
+User profiles: Create a profile to share information about yourself and your family history.
+Search and connect: Find other Fabian derivatives based on location and specific name.
+Roots discussion forum: Engage in conversations about ancestry, family stories, and shared heritage.
 
-### `npm start`
+## Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Frontend: React, Redux Toolkit, Chakra UI
+Backend: Node.js, Express, MongoDB
+Real-time communication: Socket.io
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+Clone the repository:
+Bash
+git clone https://github.com/solaroptic/fabiz.git
+Install dependencies:
+Bash
+cd fabiz_test
+npm install
+Create a MongoDB database:
+Start the development server:
+Bash
+npm run dev
+Access the app:
+Open http://localhost:3000 in your browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Additional Information
 
-### `npm run build`
+Environment variables: The app uses a .env file to store sensitive information like database credentials. Create a .env file in the root directory and add the required variables.
+Authentication: The app includes user authentication functionality. Implement your preferred authentication method (e.g., email/password, social login).
+Deployment: For production deployment, consider using a platform like Heroku or AWS.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+We welcome contributions! Please follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Fork the repository.
+Create a new branch for your changes.
+Make your changes and commit them with clear messages.
+Push your branch to your fork.
+Create a pull request.
 
-### `npm run eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This project is licensed under the MIT License.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contact
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+For any questions or suggestions, reach out to kumolanding@gmail.com.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Happy connecting with your fellow Fabians! **
